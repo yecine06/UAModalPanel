@@ -27,18 +27,24 @@ typedef enum {
 	UAGradientBackgroundStyle	gradientStyle;
 	UAGradientLineMode			lineMode;
 	CGFloat						*colorComponents;
+    CGFloat						*locationComponents;
+    CGFloat                      locationSize;
 }
 
 @property (nonatomic, assign) UAGradientBackgroundStyle	gradientStyle;
 @property (nonatomic, assign) UAGradientLineMode		lineMode;
 
+- (id)initWithFrame:(CGRect)frame style:(UAGradientBackgroundStyle)aStyle color:(CGFloat *)components location:(CGFloat *)locations locationSize:(CGFloat)locsize lineMode:(UAGradientLineMode)lineModes;
 - (id)initWithFrame:(CGRect)frame style:(UAGradientBackgroundStyle)aStyle color:(CGFloat *)components lineMode:(UAGradientLineMode)lineModes;
 - (id)initWithFrame:(CGRect)frame color:(CGFloat *)components;
 - (id)initWithFrame:(CGRect)frame style:(UAGradientBackgroundStyle)aStyle;
 - (id)initWithFrame:(CGRect)frame;
 
 - (void)setColorComponents:(CGFloat *)components;
+- (void)setLocationComponents:(CGFloat *)locations;
+- (void)setColorComponents:(CGFloat *)components andLocationComponents:(CGFloat *)locations andLocationSize:(CGFloat)locsize;
 
++ (id)gradientWithFrame:(CGRect)frame style:(UAGradientBackgroundStyle)aStyle color:(CGFloat *)components location:(CGFloat *)locations locationSize:(CGFloat)locsize lineMode:(UAGradientLineMode)lineModes;
 + (id)gradientWithFrame:(CGRect)frame style:(UAGradientBackgroundStyle)aStyle color:(CGFloat *)components lineMode:(UAGradientLineMode)lineModes;
 + (id)gradientWithFrame:(CGRect)frame color:(CGFloat *)components;
 + (id)gradientWithFrame:(CGRect)frame style:(UAGradientBackgroundStyle)aStyle;

@@ -105,7 +105,7 @@
 
 - (UIView *)roundedRect {
 	if (!roundedRect) {
-		self.roundedRect = [[[UIView alloc] initWithFrame:CGRectZero] autorelease];
+		self.roundedRect = [[[UARoundedRectView alloc] initWithFrame:CGRectZero] autorelease];
 		roundedRect.layer.masksToBounds = YES;
 		roundedRect.backgroundColor = self.contentColor;
 		roundedRect.layer.borderColor = [self.borderColor CGColor];
